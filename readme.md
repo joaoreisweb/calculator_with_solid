@@ -6,8 +6,8 @@
  LSP - The Liskov Substitution Principle  
  ISP - The Interface Segregation Principle  
  DIP - The Dependency Inversion Principle  
- 
-<br>
+
+
 ## Installation
 
 Clone de repository
