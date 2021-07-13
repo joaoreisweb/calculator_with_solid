@@ -7,8 +7,8 @@ class ValidateSimpleEquation implements Validation
 	private $equation;
 	private $operators;
 
-	public function __construct($validate, $operators){
-		$this->equation = $validate;
+	public function __construct($equation, $operators){
+		$this->equation = $equation;
 		$this->operators = $operators;
 	}
 
