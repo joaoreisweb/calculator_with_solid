@@ -1,7 +1,13 @@
 # Calculator with S.O.L.I.D.
-<br><br>
+<br>
  
-
+ SRP - The Single Responsibility Principle
+ OCP - The Open Closed Principle
+ LSP - The Liskov Substitution Principle
+ ISP - The Interface Segregation Principle
+ DIP - The Dependency Inversion Principle
+ 
+<br>
 ## Installation
 
 Clone de repository
