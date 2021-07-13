@@ -1,18 +1,12 @@
 <?php
 
+declare(strict_types=1);
+include 'includes/autoloader.inc.php';
 
-require 'calculator.php';
-require 'validator.php';
-
-
-foreach (glob("operations\class_*.php") as $filename) {
-    include_once $filename;
-}
-
-foreach (glob("validations\class_*.php") as $filename) {
-    include_once $filename;
-}
-
+// use calculator\operations\Divison;
+// use calculator\operations\Addition;
+// use calculator\operations\Multiplication;
+// use calculator\operations\Subtraction;
 use calculator\validations\ValidateSimpleEquation;
 
 ///// CONVERT ARGUMENT VALUES
@@ -63,7 +57,7 @@ if ($string_equation != '') {
     $operation = $actions[ array_search($operator, $operators) ];
     $operationClass = 'calculator\operations\\'.$operation; 
 
-    $result_equation = $string_equation .' = '. $calc->getResult( new $operationClass($val1,$val2) );
+    $result_equation = $string_equation .' = '. $calc->getResult( new $operationClass(floatval($val1),floatval($val2)) );
 
     echo $result_equation;
     

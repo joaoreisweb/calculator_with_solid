@@ -1,21 +1,7 @@
 <?php
 
-require 'calculator.php';
-require 'validator.php';
-
-//// include all classes
-// require 'operations\class_addition.php';
-// require 'operations\class_subtraction.php';
-// require 'operations\class_multiplication.php';
-// require 'operations\class_divison.php';
-
-foreach (glob("operations\class_*.php") as $filename) {
-    include_once $filename;
-}
-
-foreach (glob("validations\class_*.php") as $filename) {
-    include_once $filename;
-}
+declare(strict_types=1);
+include 'includes/autoloader.inc.php';
 
 // use calculator\operations\Divison;
 // use calculator\operations\Addition;
@@ -60,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     	$operation = $actions[ array_search($operator, $operators) ];
 		$operationClass = 'calculator\operations\\'.$operation; 
 
-		$result_equation = $string_equation .' = '. $calc->getResult( new $operationClass($val1,$val2) );
+		$result_equation = $string_equation .' = '. $calc->getResult( new $operationClass(floatval($val1),floatval($val2)) );
 
     }
 
