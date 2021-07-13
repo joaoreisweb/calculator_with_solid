@@ -12,7 +12,7 @@ git clone https://github.com/joaoreisweb/calculator_solid.git .
 
 Go to calculator folder
 ```bash
-"cd calculator"
+cd calculator
 ```
 
 ## Init server
