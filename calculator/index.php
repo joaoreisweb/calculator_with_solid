@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $operator = isset($_POST['operator']) ? $_POST['operator'] : '';
     $equation = isset($_POST['equation']) ? $_POST['equation'] : '';
 
+    $decimalPrecision = 3;
     $operators = ['+','-','/','*']; /// exercise valid operators
     $actions = ['Addition', 'Subtraction', 'Divison', 'Multiplication'];
 
@@ -46,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     	$operation = $actions[ array_search($operator, $operators) ];
 		$operationClass = 'calculator\operations\\'.$operation; 
 
-		$result_equation = $string_equation .' = '. $calc->getResult( new $operationClass(floatval($val1),floatval($val2)) );
+		$result_equation = $string_equation .' = '. $calc->getResult( new $operationClass(floatval($val1),floatval($val2),$decimalPrecision) );
 
     }
 
